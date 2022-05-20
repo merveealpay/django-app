@@ -14,7 +14,7 @@ class ArticleModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     slug = AutoSlugField(populate_from='title', unique=True)
     categories = models.ManyToManyField(CategoryModel, related_name='article')
-    writer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='articles')
+    writer = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='articles')
 
     class Meta:
         verbose_name = 'Article'

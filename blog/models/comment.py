@@ -6,7 +6,7 @@ from blog.models import ArticleModel
 
 class CommentModel(models.Model):
     comment = models.TextField()
-    commenter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comment')
+    commenter = models.ForeignKey('account.CustomUserModel', on_delete=models.CASCADE, related_name='comment')
     article = models.ForeignKey(ArticleModel, on_delete=models.CASCADE, related_name='comments')
     created_at =  models.DateTimeField(auto_now_add=True)
     updated_at =  models.DateTimeField(auto_now=True)
