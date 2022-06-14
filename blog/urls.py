@@ -6,6 +6,6 @@ from blog.views import homepage
 from blog.views.contact import contact
 
 urlpatterns = [
-    path('contact', contact),
-    path('', homepage),
+    path('contact', contact, name='contact'),
+    path('', homepage, name='home'),
 ]
